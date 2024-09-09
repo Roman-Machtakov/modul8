@@ -25,29 +25,39 @@ class Car:
         if len(numbers) != 6:
             raise IncorrectCarNumbers('Неверная длина номера')
         return numbers
+
+    def get_vin(self):
+        return self.__vin
+
+    def get_numbers(self):
+        return self.__numbers
+
 try:
   first = Car('Model1', 1000000, 'f123dj')
+  print(f'{first.model} успешно создан')
+  print(f'VIN: {first.get_vin()}')
+  print(f'Номера: {first.get_numbers()}')
 except IncorrectVinNumber as exc:
   print(exc.message)
 except IncorrectCarNumbers as exc:
   print(exc.message)
-else:
-  print(f'{first.model} успешно создан')
 
 try:
   second = Car('Model2', 300, 'т001тр')
+  print(f'{second.model} успешно создан')
+  print(f'VIN: {second.get_vin()}')
+  print(f'Номера: {second.get_numbers()}')
 except IncorrectVinNumber as exc:
   print(exc.message)
 except IncorrectCarNumbers as exc:
   print(exc.message)
-else:
-  print(f'{second.model} успешно создан')
 
 try:
   third = Car('Model3', 2020202, 'нет номера')
+  print(f'{third.model} успешно создан')
+  print(f'VIN: {third.get_vin()}')
+  print(f'Номера: {third.get_numbers()}')
 except IncorrectVinNumber as exc:
   print(exc.message)
 except IncorrectCarNumbers as exc:
   print(exc.message)
-else:
-  print(f'{third.model} успешно создан')
